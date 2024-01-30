@@ -19,16 +19,14 @@ body {
 
 .header {
   background-color: #fff;
-  position: relative;
-  backface-visibility: hidden; }
+  position: relative; }
   .header__wrapper {
     padding: 0.6rem 1.5rem;
     width: 100%;
     height: 7.5rem;
     background-color: #fff;
     transition: all 0.5s ease-in;
-    backface-visibility: hidden;
-    overflow: hidden; }
+    backface-visibility: hidden; }
     @media only screen and (max-width: 500px) {
       .header__wrapper {
         height: auto;
@@ -75,12 +73,17 @@ body {
       align-self: stretch;
       height: 100%;
       position: relative; }
+      @media only screen and (max-width: 500px) {
+        .header__nav-items {
+          width: 100%; } }
       .header__nav-items:hover > .header__nav-dropdown {
         opacity: 1;
-        visibility: visible; }
+        visibility: visible;
+        z-index: 999; }
     .header__nav-link:link, .header__nav-link:visited {
       color: #2c2e2f;
       display: inline-block;
+      position: relative;
       text-decoration: none;
       text-transform: capitalize;
       font-size: 1.5rem;
@@ -93,7 +96,8 @@ body {
           font-size: 0.8rem; } }
       @media only screen and (max-width: 500px) {
         .header__nav-link:link, .header__nav-link:visited {
-          font-size: 1rem; } }
+          font-size: 1rem;
+          width: 100%; } }
     .header__nav-link > i {
       font-size: 1rem;
       transition: transform 0.1s; }
@@ -119,9 +123,10 @@ body {
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease-in-out; }
-      @media only screen and (max-width: 500px) {
+      @media only screen and (max-width: 700px) {
         .header__nav-dropdown {
-          width: 100%; } }
+          min-width: 2rem;
+          padding: 1.8rem 3rem 1.2rem 1.8rem; } }
       .header__nav-dropdown ul {
         padding-left: 0; }
       .header__nav-dropdown--item {
@@ -134,6 +139,10 @@ body {
         font-weight: 500;
         transition: color 0.2s;
         margin-bottom: 1rem; }
+        @media only screen and (max-width: 700px) {
+          .header__nav-dropdown-link:link, .header__nav-dropdown-link:visited {
+            width: 100%;
+            font-size: 1rem; } }
       .header__nav-dropdown-link:hover {
         color: #0070ba; }
   .header__logo {
@@ -203,8 +212,9 @@ body {
     height: calc(100vh - 7.5rem);
     background-image: url(../img/banner-image.png);
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; }
+    background-position: top;
+    background-repeat: no-repeat;
+    backface-visibility: hidden; }
     @media only screen and (max-width: 500px) {
       .header__banner {
         transform: translateY(-7.5rem); } }
@@ -227,10 +237,10 @@ body {
       animation: bannerAnimation 0.6s linear; }
       @media only screen and (max-width: 540px) {
         .header__banner-text {
-          font-size: 3.8rem; } }
-      @media only screen and (max-width: 704px) {
+          font-size: 3rem; } }
+      @media only screen and (max-width: 836px) {
         .header__banner-text {
-          font-size: 4.2rem; } }
+          font-size: 4rem; } }
 
 @keyframes bannerAnimation {
   0% {

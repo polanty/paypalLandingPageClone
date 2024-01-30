@@ -1,7 +1,7 @@
 .header {
   background-color: #fff;
   position: relative;
-  backface-visibility: hidden;
+  // backface-visibility: hidden;
   //overflow: hidden;
 
   &__wrapper {
@@ -11,7 +11,7 @@
     background-color: #fff;
     transition: all 0.5s ease-in;
     backface-visibility: hidden;
-    overflow: hidden;
+    // overflow: hidden;
 
     @media only screen and (max-width: 500px) {
       & {
@@ -81,10 +81,17 @@
       height: 100%;
       position: relative;
 
+      @media only screen and (max-width: 500px) {
+        & {
+          width: 100%;
+        }
+      }
+
       &:hover > .header__nav-dropdown {
         // display: block;
         opacity: 1;
         visibility: visible;
+        z-index: 999;
       }
     }
 
@@ -92,6 +99,7 @@
     &-link:visited {
       color: #2c2e2f;
       display: inline-block;
+      position: relative;
       // height: 100%;
       text-decoration: none;
       text-transform: capitalize;
@@ -111,6 +119,7 @@
       @media only screen and (max-width: 500px) {
         & {
           font-size: 1rem;
+          width: 100%;
         }
       }
     }
@@ -150,9 +159,10 @@
       visibility: hidden;
       transition: all 0.3s ease-in-out;
 
-      @media only screen and (max-width: 500px) {
+      @media only screen and (max-width: 700px) {
         & {
-          width: 100%;
+          min-width: 2rem;
+          padding: 1.8rem 3rem 1.2rem 1.8rem;
         }
       }
 
@@ -173,6 +183,13 @@
         font-weight: 500;
         transition: color 0.2s;
         margin-bottom: 1rem;
+
+        @media only screen and (max-width: 700px) {
+          & {
+            width: 100%;
+            font-size: 1rem;
+          }
+        }
       }
 
       &-link:hover {
@@ -288,9 +305,9 @@
 
     background-image: url(../img/banner-image.png);
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
-    // backface-visibility: hidden;
+    backface-visibility: hidden;
 
     @media only screen and (max-width: 500px) {
       & {
@@ -328,13 +345,13 @@
 
       @media only screen and (max-width: 540px) {
         & {
-          font-size: 3.8rem;
+          font-size: 3rem;
         }
       }
 
-      @media only screen and (max-width: 704px) {
+      @media only screen and (max-width: 836px) {
         & {
-          font-size: 4.2rem;
+          font-size: 4rem;
         }
       }
     }
