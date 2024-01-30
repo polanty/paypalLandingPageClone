@@ -1,0 +1,52 @@
+.main-heading {
+  color: $color-primary;
+  font-weight: 500;
+  font-size: 3.8rem;
+  line-height: 4.7rem;
+  margin: 0 0 1.6rem 0;
+
+  @media only screen and (max-width: 540px) {
+    & {
+      font-size: 2.8rem;
+      line-height: 3rem;
+    }
+  }
+}
+
+.main-heading-small {
+  @extend .main-heading;
+  font-size: 2.8rem;
+  line-height: 4rem;
+  font-weight: 600;
+
+  @media only screen and (max-width: 913px) {
+    & {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      // align-self: flex-start;
+    }
+  }
+}
+
+.main-heading-white {
+  color: white;
+  font-weight: 500;
+  font-size: 3.8rem;
+  line-height: 4.7rem;
+  margin: 0 0 1.6rem 0;
+}
+
+.secondary-heading {
+  color: $color-primary;
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 2.8rem;
+}
+
+.small-margin {
+  margin: 1rem 0 1rem;
+}
+
+.small-padding {
+  padding: 1.5rem 2rem;
+}

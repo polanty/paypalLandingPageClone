@@ -1,0 +1,29 @@
+$color-primary: #003087;
+$color-secondary: #0070ba;
+$color-secondary-light: #0070e0;
+$color-hover: #ffd140;
+$color-background: #faf8f5;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: inherit;
+  font-size: 62.5%; // converting 10px to 1 rem instead of 16px from all browser default
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Baloo Da 2", sans-serif, "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}

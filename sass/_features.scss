@@ -1,0 +1,128 @@
+.features {
+  background-color: $color-background;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 4rem;
+    padding: 0 2rem;
+    height: max-content;
+  }
+
+  &__card {
+    background-color: rgb(255, 255, 255);
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+
+    &-image {
+      height: 23rem;
+      background-size: cover;
+
+      &--1 {
+        background-image: url(../img/image-1.jpg);
+      }
+
+      &--2 {
+        background-image: url(../img/image-2.jpg);
+      }
+
+      &--3 {
+        background-image: url(../img/image-3.jpg);
+      }
+    }
+
+    &-text {
+      padding: 2.3rem 3.8rem 4rem;
+      height: 40%;
+
+      & > p {
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1.4;
+      }
+    }
+
+    &-link:link,
+    &-link:visited {
+      font-weight: 700;
+      padding: 1rem 0.5rem;
+      margin-left: 3.5rem;
+      //margin-bottom: 1rem;
+      text-decoration: none;
+      font-size: 1.8rem;
+      color: $color-secondary-light;
+      width: max-content;
+
+      display: flex;
+      align-items: center;
+
+      &:hover i {
+        margin-left: 1rem;
+      }
+
+      & > i {
+        margin-left: 0.5rem;
+        font-size: 2rem;
+        position: relative;
+        z-index: 10;
+        display: block;
+        transition: margin-left 0.5s ease-in-out;
+      }
+    }
+  }
+}
+
+.section__news {
+  padding: 5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-primary;
+  justify-content: center;
+
+  // @media only screen and (max-width: 500px) {
+  //   & {
+  //     height: 100vh;
+  //   }
+  // }
+
+  .section__news &-latest {
+    width: 95%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  & > .features__container > .features__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &-link {
+    font-weight: 700;
+    padding: 1rem 0.5rem;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: white;
+    width: max-content;
+    margin-right: 1rem;
+
+    display: flex;
+    align-items: center;
+
+    & > .icon {
+      margin-left: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    &:hover &-link {
+      text-decoration: underline;
+    }
+
+    &:hover > .icon {
+      transform: translateX(1rem);
+    }
+  }
+}

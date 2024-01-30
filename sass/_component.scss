@@ -1,0 +1,145 @@
+.front-page {
+  position: relative;
+}
+
+.main {
+  &__btn {
+    background-color: $color-primary;
+    display: inline-block;
+    padding: 1.2rem 2.2rem;
+    color: #fff;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 2.4rem;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+
+    @media only screen and (max-width: 1350px) {
+      & {
+        font-size: 1rem;
+        font-weight: 400;
+        padding: 1rem 2rem;
+      }
+    }
+
+    @media only screen and (max-width: 900px) {
+      & {
+        font-size: 0.8rem;
+        padding: 1rem 1.3rem;
+      }
+    }
+
+    @media only screen and (max-width: 540px) {
+      & {
+        font-size: 0.6rem;
+        padding: 1rem 1.5rem;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      & {
+        font-size: 0.8rem;
+        padding: 1rem 1.6rem;
+      }
+    }
+
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+}
+
+section {
+  &.active {
+    margin-top: 7.5rem;
+  }
+}
+
+.courasel__button {
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.button {
+  border: none;
+  display: inline-block;
+  font-size: 1.3rem;
+  background-color: $color-secondary-light;
+  color: #fff;
+  padding: 1rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &--left {
+    margin-right: 1rem;
+  }
+
+  &--right {
+    margin-left: 1rem;
+  }
+}
+
+//////////////////// cOURASEL DOTS
+
+.dot {
+  cursor: pointer;
+  height: 1.2rem;
+  width: 1.2rem;
+  margin: 0 4px;
+  background-color: rgba($color-secondary-light, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.active,
+  &:hover {
+    background-color: $color-secondary-light;
+  }
+}
+
+.section-padding {
+  padding: 3.5rem 0;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+}
+
+//////////////////
+/// Courasel fade animation
+///
+.fade {
+  animation-name: fade;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.color-white {
+  color: #fff;
+}

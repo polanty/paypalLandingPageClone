@@ -1,0 +1,354 @@
+.header {
+  background-color: #fff;
+  position: relative;
+  backface-visibility: hidden;
+  //overflow: hidden;
+
+  &__wrapper {
+    padding: 0.6rem 1.5rem;
+    width: 100%;
+    height: 7.5rem;
+    background-color: #fff;
+    transition: all 0.5s ease-in;
+    backface-visibility: hidden;
+    overflow: hidden;
+
+    @media only screen and (max-width: 500px) {
+      & {
+        height: auto;
+        display: block;
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+    &.active {
+      position: fixed;
+      height: 7.5rem;
+      top: 0;
+      background-color: white;
+      box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+
+      @media only screen and (max-width: 500px) {
+        & {
+          height: auto;
+          display: block;
+          position: static;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backface-visibility: hidden;
+
+    @media only screen and (max-width: 500px) {
+      & {
+        display: block;
+        width: 100%;
+        height: 100%;
+        // background-color: red;
+      }
+    }
+
+    //  the nav item and items style
+    &-item {
+      display: flex;
+      flex: 0 0 60%;
+      list-style-type: none;
+      justify-content: space-evenly;
+      align-items: stretch;
+      padding-left: 0;
+
+      @media only screen and (max-width: 500px) {
+        & {
+          flex-direction: column;
+          width: 100%;
+
+          padding: 1rem;
+        }
+      }
+    }
+
+    &-items {
+      display: inline-block;
+      align-self: stretch;
+      height: 100%;
+      position: relative;
+
+      &:hover > .header__nav-dropdown {
+        // display: block;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &-link:link,
+    &-link:visited {
+      color: #2c2e2f;
+      display: inline-block;
+      // height: 100%;
+      text-decoration: none;
+      text-transform: capitalize;
+      font-size: 1.5rem;
+      font-weight: 600;
+      //   margin-right: 0.5rem;
+      padding: 2rem 0;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+
+      @media only screen and (max-width: 845px) {
+        & {
+          font-size: 0.8rem;
+        }
+      }
+
+      @media only screen and (max-width: 500px) {
+        & {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    &-link > i {
+      font-size: 1rem;
+      transition: transform 0.1s;
+    }
+
+    .navLink-active {
+      color: $color-secondary-light;
+      border-bottom: 3px solid $color-hover;
+    }
+
+    &-link:hover {
+      color: $color-secondary-light;
+      border-bottom: 3px solid $color-hover;
+
+      & > i {
+        transform: rotate(180deg);
+      }
+    }
+
+    &-dropdown {
+      position: absolute;
+      left: 0;
+      min-width: 2.3rem;
+      background-color: #fff;
+      white-space: nowrap;
+      padding: 2rem 3.5rem 1.6rem 2rem;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
+      z-index: 200;
+      // display: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+
+      @media only screen and (max-width: 500px) {
+        & {
+          width: 100%;
+        }
+      }
+
+      & ul {
+        padding-left: 0;
+      }
+
+      &--item {
+        list-style-type: none;
+      }
+
+      &-link:link,
+      &-link:visited {
+        display: inline-block;
+        text-decoration: none;
+        color: $color-secondary-light;
+        font-size: 1.8rem;
+        font-weight: 500;
+        transition: color 0.2s;
+        margin-bottom: 1rem;
+      }
+
+      &-link:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+  //////////////////////////// The logo design
+  &__logo {
+    font-size: 4rem;
+    font-style: italic;
+    font-weight: 700;
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: 900px) {
+      & {
+        font-size: 3rem;
+        padding-bottom: 0.8rem;
+        // align-self: flex-start;
+      }
+    }
+
+    @media only screen and (max-width: 540px) {
+      & {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      & {
+        align-self: flex-start;
+        justify-self: center;
+        padding-top: 1rem;
+      }
+    }
+
+    &-text {
+      position: relative;
+      color: $color-primary;
+      display: inline;
+      font-size: 3rem;
+      font-style: normal;
+      font-weight: 600;
+      margin-left: 3px;
+
+      @media only screen and (max-width: 900px) {
+        & {
+          font-size: 3rem;
+          margin-left: 2px;
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    &-icon {
+      display: inline-block;
+      font-size: 3.5rem;
+      margin-left: 0.5rem;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-primary,
+        rgb(70, 91, 253)
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  &__form {
+    align-self: center;
+    justify-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 500px) {
+      & {
+        padding: 1rem;
+      }
+    }
+  }
+
+  ////////landing page search icon
+
+  &__search-icon {
+    border: none;
+    outline: none;
+    background-color: #fff;
+    font-size: 3rem;
+    margin-left: 0.5rem;
+    color: $color-primary;
+
+    @media only screen and (max-width: 1350px) {
+      & {
+        font-size: 2.4rem;
+      }
+    }
+
+    @media only screen and (max-width: 540px) {
+      & {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  /////home page banner
+
+  &__banner {
+    height: calc(100vh - 7.5rem);
+
+    background-image: url(../img/banner-image.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    // backface-visibility: hidden;
+
+    @media only screen and (max-width: 500px) {
+      & {
+        transform: translateY(-7.5rem);
+      }
+    }
+
+    &.active {
+      position: relative;
+      top: 7.5rem;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &-container {
+      max-width: 65%;
+      padding: 2%;
+      padding-top: 5%;
+
+      // @media only screen and (max-width: 540px) {
+      //   & {
+      //     transform: translate(50%, 50%);
+      //   }
+      // }
+    }
+
+    &-text {
+      font-size: 6rem;
+      max-width: 85%;
+      line-height: 1.2;
+      font-weight: 700;
+      color: $color-primary;
+      animation: bannerAnimation 0.6s linear;
+
+      @media only screen and (max-width: 540px) {
+        & {
+          font-size: 3.8rem;
+        }
+      }
+
+      @media only screen and (max-width: 704px) {
+        & {
+          font-size: 4.2rem;
+        }
+      }
+    }
+
+    @keyframes bannerAnimation {
+      0% {
+        opacity: 0;
+        transform: translateY(80%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translate(0);
+      }
+    }
+  }
+}

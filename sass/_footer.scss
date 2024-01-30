@@ -1,0 +1,55 @@
+.footer {
+  background-color: #fff;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__logo {
+    width: 10rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+
+    background-image: url(https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-color.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__nav {
+    &-date {
+      color: #545d68;
+      font-weight: 300;
+    }
+
+    &__container {
+      display: flex;
+      list-style-type: none;
+      color: #001c64;
+      padding: 1rem;
+      flex-wrap: wrap;
+
+      &__item {
+        font-size: 1.2rem;
+        display: inline-block;
+        padding: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+
+        @media only screen and (max-width: 500px) {
+          & {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__note {
+    &__text {
+      color: #001c64;
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 2rem;
+    }
+  }
+}
