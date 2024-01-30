@@ -1,7 +1,5 @@
 # paypalLandingPageClone
 
-Certainly! Here's a sample GitHub description for your PayPal landing page project:
-
 PayPal Landing Page
 
 This project is a responsive PayPal landing page designed using Sass CSS. It features a visually appealing layout with a carousel segment and seamless responsiveness across various screen sizes.
