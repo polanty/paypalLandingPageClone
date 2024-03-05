@@ -30,9 +30,6 @@ section {
     .header {
       height: 90vh;
       padding-top: 7.5rem; } }
-  @media only screen and (max-width: 750px) {
-    .header {
-      height: 50vh; } }
   .header-hamburger, .header-hamburger::after, .header-hamburger::before {
     display: none;
     opacity: 0;
