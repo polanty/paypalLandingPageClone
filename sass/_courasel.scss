@@ -7,6 +7,7 @@
       grid-template-rows: 1fr;
       grid-gap: 1rem;
       align-content: center;
+
       transition: opacity 5s;
       min-height: max-content;
 
@@ -29,6 +30,7 @@
       border-radius: 2.4rem;
       margin-left: 1rem;
       overflow: hidden;
+      align-self: center;
 
       @media only screen and (max-width: 500px) {
         & {
@@ -56,12 +58,19 @@
       font-weight: 500;
       font-size: 1.6rem;
       line-height: 2.6rem;
-      color: #001435;
+      color: #001435; //#faf8f5
       margin-bottom: 1rem;
+
+      @media only screen and (max-width: 756px) {
+        & {
+          font-size: 1.2rem;
+          line-height: 2.2rem;
+        }
+      }
 
       @media only screen and (max-width: 540px) {
         & {
-          font-size: 1.2rem;
+          font-size: 1rem;
           line-height: 2rem;
         }
       }

@@ -2,11 +2,28 @@
   background-color: $color-background;
 
   &__container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    grid-gap: 4rem;
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    // grid-gap: 4rem;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+
     padding: 0 2rem;
     height: max-content;
+
+    @media only screen and (max-width: 1025px) {
+      & {
+        // flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
   }
 
   &__card {
@@ -14,6 +31,46 @@
     border-radius: 2rem;
     overflow: hidden;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+
+    width: auto;
+    flex-basis: 30%;
+    max-width: 30%;
+    margin: 2rem;
+    min-height: 40rem;
+
+    @media only screen and (max-width: 1250px) {
+      & {
+        margin: 1.5rem;
+      }
+    }
+
+    @media only screen and (max-width: 1025px) {
+      & {
+        flex-basis: 45%;
+        max-width: 45%;
+      }
+    }
+
+    @media only screen and (max-width: 840px) {
+      & {
+        flex-basis: 45%;
+        max-width: 45%;
+      }
+    }
+
+    // @media only screen and (max-width: 800px) {
+    //   & {
+    //     flex-basis: 45%;
+    //     max-width: 45%;
+    //   }
+    // }
+
+    @media only screen and (max-width: 780px) {
+      & {
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+    }
 
     &-image {
       height: 23rem;
@@ -30,6 +87,81 @@
       &--3 {
         background-image: url(../img/image-3.jpg);
       }
+
+      //images source for the ledership page
+      &-leadership--1 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/who_we_are/mission-vision-val.jpg);
+      }
+
+      &-leadership--2 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/who_we_are/history-facts.jpg);
+      }
+
+      &-leadership--3 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/who_we_are/2023/PayPal_CEO_Breakfast_8-5-1-1.jpg);
+      }
+
+      &-leadership--4 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/who_we_are/board_room.jpg);
+      }
+
+      &-leadership--5 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/who_we_are/fam_of_brands.jpg);
+      }
+
+      //how we work section image resources
+      &-how-we-work--1 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/how_we_work/trust-privacy.jpg);
+      }
+
+      &-how-we-work--2 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/how_we_work/responsible-business.jpg);
+      }
+
+      &-how-we-work--3 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/how_we_work/employees-culture.jpeg);
+      }
+
+      &-how-we-work--4 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/how_we_work/diversity-and-inclusion-new.jpg);
+      }
+
+      &-how-we-work--5 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/how_we_work/2023/Climate_Sept2022_01_3x2.jpeg);
+      }
+
+      &-how-we-work--6 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/how_we_work/paypal_office_thumb.jpg);
+      }
+
+      //value in action image resources
+      &-values--1 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/vaues_in_action/2023/AguasLocas_220216-Paypal-Park_1084.jpg);
+      }
+
+      &-values--2 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/vaues_in_action/empowering-small-business.jpg);
+      }
+
+      &-values--3 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/vaues_in_action/powering-giving.jpg);
+      }
+
+      &-values--4 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/vaues_in_action/strengthening-communities.jpg);
+      }
+
+      &-values--5 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/2023/09/FriendsDinner_220214_Paypal-Friends-Dinner-0045-1.jpg);
+      }
+
+      &-values--6 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/design/pp-votes.jpg);
+      }
+
+      &-values--7 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/vaues_in_action/reporting.jpg);
+      }
     }
 
     &-text {
@@ -45,12 +177,14 @@
 
     &-link:link,
     &-link:visited {
+      display: inline-block;
       font-weight: 700;
-      padding: 1rem 0.5rem;
+      padding: 2rem 0.5rem;
       margin-left: 3.5rem;
+      margin-bottom: 3.5rem;
       //margin-bottom: 1rem;
       text-decoration: none;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: $color-secondary-light;
       width: max-content;
 
@@ -88,11 +222,13 @@
 
   .section__news &-latest {
     width: 95%;
-    margin: 0 auto;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    max-width: 1440px;
+    margin: 0 auto;
   }
   & > .features__container > .features__card {
     display: flex;
@@ -111,6 +247,12 @@
 
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: 999px) {
+      & {
+        font-size: 1.2rem;
+      }
+    }
 
     & > .icon {
       margin-left: 0.5rem;

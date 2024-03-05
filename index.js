@@ -5,6 +5,8 @@ const header = document.querySelector(".header");
 const nav = document.querySelector(".header__wrapper");
 const banner = document.querySelector(".header__banner");
 const section = document.querySelectorAll("section");
+const harmburger = document.querySelector(".header-hamburger");
+const headerWrapper = document.querySelector(".header__wrapper");
 
 //active nav first solution
 // window.addEventListener("scroll", function () {
@@ -13,22 +15,26 @@ const section = document.querySelectorAll("section");
 //   } else {
 //     nav.classList.remove("active");
 //   }
-// });
+// }):
+
+harmburger.addEventListener("click", (e) => {
+  headerWrapper.classList.toggle("active");
+});
 
 //modern way to insert a active class by observing with intersection observer
 const observerFunc = function (entries, _) {
   entries.forEach((entry) => {
-    if (entry.intersectionRatio < 1) {
-      banner.classList.add("active");
-      nav.classList.add("active");
-      ///// to give each section a margin apart
-      section.forEach((section) => {
-        section.classList.add("active");
-      });
-    } else {
-      nav.classList.remove("active");
-      banner.classList.remove("active");
-    }
+    // if (entry.intersectionRatio < 1) {
+    //   banner.classList.add("active");
+    //   nav.classList.add("active");
+    //   ///// to give each section a margin apart
+    //   section.forEach((section) => {
+    //     section.classList.add("active");
+    //   });
+    // } else {
+    //   nav.classList.remove("active");
+    //   banner.classList.remove("active");
+    // }
   });
 };
 

@@ -2,9 +2,45 @@
   position: relative;
 }
 
+.header__pages {
+  display: block;
+  padding-top: 7.5rem;
+
+  @media only screen and (max-width: 999px) {
+    & {
+      background-image: linear-gradient(#faf8f5, #faf8f5);
+    }
+  }
+
+  @media only screen and (max-width: 750px) {
+    & {
+      height: 50vh;
+    }
+  }
+}
+
+.header__banner {
+  @media only screen and (max-width: 999px) {
+    & {
+      background-image: linear-gradient(#faf8f5, #faf8f5);
+    }
+  }
+
+  &-container {
+    @media only screen and (max-width: 999px) {
+      & {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
 .main {
   &__btn {
     background-color: $color-primary;
+    text-decoration: none;
     display: inline-block;
     padding: 1.2rem 2.2rem;
     color: #fff;

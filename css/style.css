@@ -13,44 +13,85 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: "Baloo Da 2", sans-serif, "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", sans-serif, "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: 400;
   line-height: 1.6; }
 
+section {
+  padding: 8rem 0 8rem 0; }
+
 .header {
-  background-color: #fff;
-  position: relative; }
+  position: relative;
+  background-color: #faf8f5;
+  height: 110vh;
+  width: 100%;
+  padding-top: 10rem; }
+  @media only screen and (max-width: 1500px) {
+    .header {
+      height: 90vh;
+      padding-top: 7.5rem; } }
+  @media only screen and (max-width: 750px) {
+    .header {
+      height: 50vh; } }
+  .header-hamburger, .header-hamburger::after, .header-hamburger::before {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    height: 2px;
+    width: 4rem;
+    background-color: #2c2e2f;
+    position: fixed;
+    display: block;
+    top: 3.5%;
+    right: 5%;
+    z-index: 999; }
+    @media only screen and (max-width: 500px) {
+      .header-hamburger, .header-hamburger::after, .header-hamburger::before {
+        display: block;
+        opacity: 1;
+        visibility: visible; } }
+  .header-hamburger::before, .header-hamburger::after {
+    content: "";
+    position: absolute; }
+  .header-hamburger::before {
+    top: 1rem; }
+  .header-hamburger::after {
+    top: -1rem; }
   .header__wrapper {
     padding: 0.6rem 1.5rem;
     width: 100%;
     height: 7.5rem;
+    padding: 1rem;
     background-color: #fff;
     transition: all 0.5s ease-in;
-    backface-visibility: hidden; }
+    backface-visibility: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 990;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out; }
     @media only screen and (max-width: 500px) {
-      .header__wrapper {
-        height: auto;
+      .header__wrapper > * {
+        display: none;
+        opacity: 0;
+        visibility: hidden; }
+      .header__wrapper > * {
+        padding: 1.4rem; }
+      .header__wrapper.active > * {
         display: block;
-        width: 100%;
-        padding: 0; } }
-    .header__wrapper.active {
-      position: fixed;
-      height: 7.5rem;
-      top: 0;
-      background-color: white;
-      box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
-      z-index: 999; }
-      @media only screen and (max-width: 500px) {
-        .header__wrapper.active {
-          height: auto;
-          display: block;
-          position: static;
-          width: 100%; } }
+        opacity: 1;
+        visibility: visible; }
+      .header__wrapper.active {
+        height: 45rem; } }
   .header__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     backface-visibility: hidden; }
+    @media only screen and (max-width: 1832px) {
+      .header__nav {
+        max-width: 1440px;
+        margin: 0 auto; } }
     @media only screen and (max-width: 500px) {
       .header__nav {
         display: block;
@@ -145,14 +186,21 @@ body {
             font-size: 1rem; } }
       .header__nav-dropdown-link:hover {
         color: #0070ba; }
-  .header__logo {
-    font-size: 4rem;
-    font-style: italic;
-    font-weight: 700;
-    padding-bottom: 1rem;
+  .header .header__logo__container {
+    background-color: #fff;
+    display: block;
+    width: max-content;
+    height: max-content;
+    color: #fff;
+    max-width: 18.5rem;
+    height: 5rem;
     display: flex;
     align-items: center;
     justify-content: center; }
+  .header__logo {
+    width: 90%;
+    height: 70%;
+    display: block; }
     @media only screen and (max-width: 900px) {
       .header__logo {
         font-size: 3rem;
@@ -164,7 +212,8 @@ body {
       .header__logo {
         align-self: flex-start;
         justify-self: center;
-        padding-top: 1rem; } }
+        width: 100%;
+        height: 80%; } }
     .header__logo-text {
       position: relative;
       color: #003087;
@@ -173,11 +222,10 @@ body {
       font-style: normal;
       font-weight: 600;
       margin-left: 3px; }
-      @media only screen and (max-width: 900px) {
+      @media only screen and (max-width: 756px) {
         .header__logo-text {
-          font-size: 3rem;
-          margin-left: 2px;
-          font-size: 2.5rem; } }
+          font-size: 1.2rem;
+          line-height: 2.2rem; } }
     .header__logo-icon {
       display: inline-block;
       font-size: 3.5rem;
@@ -209,15 +257,18 @@ body {
       .header__search-icon {
         font-size: 1.2rem; } }
   .header__banner {
-    height: calc(100vh - 7.5rem);
+    height: 100%;
+    max-width: 100%;
     background-image: url(../img/banner-image.png);
-    background-size: cover;
-    background-position: top;
+    background-size: contain;
     background-repeat: no-repeat;
-    backface-visibility: hidden; }
-    @media only screen and (max-width: 500px) {
-      .header__banner {
-        transform: translateY(-7.5rem); } }
+    background-position: right;
+    display: block;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    z-index: 1; }
     .header__banner.active {
       position: relative;
       top: 7.5rem;
@@ -225,22 +276,36 @@ body {
       right: 0;
       bottom: 0; }
     .header__banner-container {
-      max-width: 65%;
-      padding: 2%;
-      padding-top: 5%; }
+      position: absolute;
+      display: block;
+      max-width: 50%;
+      top: 30%;
+      left: 2%; }
+      @media only screen and (max-width: 999px) {
+        .header__banner-container {
+          max-width: none;
+          width: 80%;
+          margin: 0 auto; } }
     .header__banner-text {
-      font-size: 6rem;
-      max-width: 85%;
+      font-size: 6.2rem;
       line-height: 1.2;
       font-weight: 700;
       color: #003087;
-      animation: bannerAnimation 0.6s linear; }
+      animation: bannerAnimation 0.6s linear;
+      position: relative;
+      z-index: 2; }
+      @media only screen and (max-width: 1500px) {
+        .header__banner-text {
+          font-size: 5.5rem; } }
+      @media only screen and (max-width: 999px) {
+        .header__banner-text {
+          width: 100%; } }
+      @media only screen and (max-width: 650px) {
+        .header__banner-text {
+          font-size: 3.5rem; } }
       @media only screen and (max-width: 540px) {
         .header__banner-text {
           font-size: 3rem; } }
-      @media only screen and (max-width: 836px) {
-        .header__banner-text {
-          font-size: 4rem; } }
 
 @keyframes bannerAnimation {
   0% {
@@ -249,12 +314,43 @@ body {
   100% {
     opacity: 1;
     transform: translate(0); } }
+  .header__banner-about {
+    background-image: url(../img/Who-We-Are-Home-Page-Header.png); }
+  .header__banner-values {
+    background-image: url(https://s202.q4cdn.com/805890769/files/design/banner/Values-in-action/PayPal-Header-value.png); }
+  .header__banner-text__description {
+    color: #001435;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 400;
+    max-width: 500px; }
 
 .front-page {
   position: relative; }
 
+.header__pages {
+  display: block;
+  padding-top: 7.5rem; }
+  @media only screen and (max-width: 999px) {
+    .header__pages {
+      background-image: linear-gradient(#faf8f5, #faf8f5); } }
+  @media only screen and (max-width: 750px) {
+    .header__pages {
+      height: 50vh; } }
+
+@media only screen and (max-width: 999px) {
+  .header__banner {
+    background-image: linear-gradient(#faf8f5, #faf8f5); } }
+
+@media only screen and (max-width: 999px) {
+  .header__banner-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); } }
+
 .main__btn {
   background-color: #003087;
+  text-decoration: none;
   display: inline-block;
   padding: 1.2rem 2.2rem;
   color: #fff;
@@ -354,16 +450,44 @@ section.active {
 .features {
   background-color: #faf8f5; }
   .features__container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    grid-gap: 4rem;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
     padding: 0 2rem;
     height: max-content; }
+    @media only screen and (max-width: 1025px) {
+      .features__container {
+        justify-content: space-between; } }
   .features__card {
     background-color: white;
     border-radius: 2rem;
     overflow: hidden;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3); }
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+    width: auto;
+    flex-basis: 30%;
+    max-width: 30%;
+    margin: 2rem;
+    min-height: 40rem; }
+    @media only screen and (max-width: 1250px) {
+      .features__card {
+        margin: 1.5rem; } }
+    @media only screen and (max-width: 1025px) {
+      .features__card {
+        flex-basis: 45%;
+        max-width: 45%; } }
+    @media only screen and (max-width: 840px) {
+      .features__card {
+        flex-basis: 45%;
+        max-width: 45%; } }
+    @media only screen and (max-width: 780px) {
+      .features__card {
+        flex-basis: 100%;
+        max-width: 100%; } }
     .features__card-image {
       height: 23rem;
       background-size: cover; }
@@ -373,6 +497,42 @@ section.active {
         background-image: url(../img/image-2.jpg); }
       .features__card-image--3 {
         background-image: url(../img/image-3.jpg); }
+      .features__card-image-leadership--1 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/who_we_are/mission-vision-val.jpg); }
+      .features__card-image-leadership--2 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/who_we_are/history-facts.jpg); }
+      .features__card-image-leadership--3 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/who_we_are/2023/PayPal_CEO_Breakfast_8-5-1-1.jpg); }
+      .features__card-image-leadership--4 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/who_we_are/board_room.jpg); }
+      .features__card-image-leadership--5 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/who_we_are/fam_of_brands.jpg); }
+      .features__card-image-how-we-work--1 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/how_we_work/trust-privacy.jpg); }
+      .features__card-image-how-we-work--2 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/how_we_work/responsible-business.jpg); }
+      .features__card-image-how-we-work--3 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/how_we_work/employees-culture.jpeg); }
+      .features__card-image-how-we-work--4 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/how_we_work/diversity-and-inclusion-new.jpg); }
+      .features__card-image-how-we-work--5 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/how_we_work/2023/Climate_Sept2022_01_3x2.jpeg); }
+      .features__card-image-how-we-work--6 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/how_we_work/paypal_office_thumb.jpg); }
+      .features__card-image-values--1 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/vaues_in_action/2023/AguasLocas_220216-Paypal-Park_1084.jpg); }
+      .features__card-image-values--2 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/vaues_in_action/empowering-small-business.jpg); }
+      .features__card-image-values--3 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/vaues_in_action/powering-giving.jpg); }
+      .features__card-image-values--4 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/vaues_in_action/strengthening-communities.jpg); }
+      .features__card-image-values--5 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/2023/09/FriendsDinner_220214_Paypal-Friends-Dinner-0045-1.jpg); }
+      .features__card-image-values--6 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/design/pp-votes.jpg); }
+      .features__card-image-values--7 {
+        background-image: url(https://s202.q4cdn.com/805890769/files/images/vaues_in_action/reporting.jpg); }
     .features__card-text {
       padding: 2.3rem 3.8rem 4rem;
       height: 40%; }
@@ -381,11 +541,13 @@ section.active {
         font-weight: 400;
         line-height: 1.4; }
     .features__card-link:link, .features__card-link:visited {
+      display: inline-block;
       font-weight: 700;
-      padding: 1rem 0.5rem;
+      padding: 2rem 0.5rem;
       margin-left: 3.5rem;
+      margin-bottom: 3.5rem;
       text-decoration: none;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: #0070e0;
       width: max-content;
       display: flex;
@@ -408,10 +570,11 @@ section.active {
   justify-content: center; }
   .section__news .section__news-latest {
     width: 95%;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto; }
   .section__news > .features__container > .features__card {
     display: flex;
     flex-direction: column;
@@ -426,6 +589,9 @@ section.active {
     margin-right: 1rem;
     display: flex;
     align-items: center; }
+    @media only screen and (max-width: 999px) {
+      .section__news-link {
+        font-size: 1.2rem; } }
     .section__news-link > .icon {
       margin-left: 0.5rem;
       transition: all 0.2s; }
@@ -440,6 +606,10 @@ section.active {
   font-size: 3.8rem;
   line-height: 4.7rem;
   margin: 0 0 1.6rem 0; }
+  @media only screen and (max-width: 756px) {
+    .main-heading, .main-heading-small {
+      font-size: 3rem;
+      line-height: 3.5rem; } }
   @media only screen and (max-width: 540px) {
     .main-heading, .main-heading-small {
       font-size: 2.8rem;
@@ -460,12 +630,18 @@ section.active {
   font-size: 3.8rem;
   line-height: 4.7rem;
   margin: 0 0 1.6rem 0; }
+  @media only screen and (max-width: 999px) {
+    .main-heading-white {
+      font-size: 2.5rem; } }
 
 .secondary-heading {
   color: #003087;
   font-weight: 700;
   line-height: 1.2;
   font-size: 2.8rem; }
+  @media only screen and (max-width: 1250px) {
+    .secondary-heading {
+      font-size: 2rem; } }
 
 .small-margin {
   margin: 1rem 0 1rem; }
@@ -496,7 +672,8 @@ section.active {
   background-color: aquamarine;
   border-radius: 2.4rem;
   margin-left: 1rem;
-  overflow: hidden; }
+  overflow: hidden;
+  align-self: center; }
   @media only screen and (max-width: 500px) {
     .section__courasel-imgcontainer {
       max-width: 100%;
@@ -517,9 +694,13 @@ section.active {
   line-height: 2.6rem;
   color: #001435;
   margin-bottom: 1rem; }
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 756px) {
     .section__courasel-text {
       font-size: 1.2rem;
+      line-height: 2.2rem; } }
+  @media only screen and (max-width: 540px) {
+    .section__courasel-text {
+      font-size: 1rem;
       line-height: 2rem; } }
 
 .section__courasel-link {
@@ -565,4 +746,4 @@ section.active {
     color: #001c64;
     font-weight: 400;
     font-size: 1.4rem;
-    line-height: 2rem; }
+    line-height: 3rem; }
