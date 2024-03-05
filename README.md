@@ -10,24 +10,43 @@ File Structure
 css
 Copy code
 paypal-website-clone/
+
 │
+
 ├── css/
+
 │   ├── styles.css
+
 │   └── ...
+
 │
+
 ├── sass/
+
 │   ├── main.scss
+
 │   └── ...
+
 │
+
 ├── js/
+
 │   ├── script.js
+
 │   └── ...
+
 │
+
 ├── img/
+
 │   └── ...
+
 │
+
 ├── index.html
+
 └── README.md
+
 Setup Instructions
 To view the cloned PayPal website locally on your machine, follow these steps:
 
