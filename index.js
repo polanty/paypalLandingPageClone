@@ -19,6 +19,7 @@ const headerWrapper = document.querySelector(".header__wrapper");
 
 harmburger.addEventListener("click", (e) => {
   headerWrapper.classList.toggle("active");
+  harmburger.classList.toggle("active");
 });
 
 //modern way to insert a active class by observing with intersection observer
